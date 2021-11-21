@@ -29,6 +29,8 @@ def ma_in(message):
             rand_0_100(message.chat.id)
         elif message.text == 'Список дел':
             todo_list(message.chat.id)
+        else:
+            unknown_text(message.chat.id)
 
 @bot.message_handler(content_types=['text'])
 def info(id):
@@ -51,6 +53,10 @@ def rand_0_100(id):
 @bot.message_handler(content_types=['text'])
 def todo_list(id):
     bot.send_message(id, 'Сначала добавь мне эту функцию, бака😡')
+
+@bot.message_handler(content_types=['text'])
+def unknown_text(id):
+    bot.send_message(id, 'Если бы я еще могла понять речь человека...')
 
 print('Программа запущена')
 
