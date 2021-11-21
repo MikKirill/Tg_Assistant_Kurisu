@@ -1,13 +1,13 @@
-import config
+import configs
 import random
 import telebot
 from telebot import types
 
-bot =telebot.TeleBot(config.TOKEN)
+bot =telebot.TeleBot(configs.TOKEN)
 
 @bot.message_handler(commands=['start'])
 def welcome(message):
-    welcome_pic = open(config.WELCOME_IMG, 'rb')
+    welcome_pic = open(configs.WELCOME_IMG, 'rb')
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     item1 = types.KeyboardButton('Что ты можешь?')
     item2 = types.KeyboardButton('Проверить удачу')
