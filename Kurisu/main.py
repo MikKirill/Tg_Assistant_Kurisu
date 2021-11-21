@@ -28,7 +28,7 @@ def ma_in(message):
         elif message.text == 'Проверить удачу':
             rand_0_100(message.chat.id)
         elif message.text == 'Список дел':
-            check_list(message.chat.id)
+            todo_list(message.chat.id)
 
 @bot.message_handler(content_types=['text'])
 def info(id):
@@ -49,7 +49,9 @@ def rand_0_100(id):
         bot.send_message(id, 'Ничего страшного, в другой раз повезет больше😊')
 
 @bot.message_handler(content_types=['text'])
-def check_list(id):
+def todo_list(id):
     bot.send_message(id, 'Сначала добавь мне эту функцию, бака😡')
+
+print('Программа запущена')
 
 bot.polling(none_stop=True)
